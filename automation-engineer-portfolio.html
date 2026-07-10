@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrew Ayeni - AI Automation Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e0e0;
+            z-index: 1000;
+            padding: 1rem 1.5rem;
+        }
+
+        nav .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                display: none;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            margin-top: 70px;
+            padding: 100px 1.5rem 80px;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid #00d4ff;
+            color: #00d4ff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 3.5rem);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #b0c4ff;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #00d4ff;
+            color: #0a0e27;
+        }
+
+        .btn-primary:hover {
+            background: #00ffff;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #b0c4ff;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section */
+        section {
+            padding: 60px 1.5rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+        }
+
+        /* Services */
+        .services {
+            background: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price {
+            color: #00d4ff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .service-features {
+            list-style: none;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .service-features li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Workflows */
+        .workflows {
+            background: #f5f5f5;
+        }
+
+        .workflow-tabs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .workflow-tab {
+            padding: 1rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .workflow-tab.active {
+            border-color: #00d4ff;
+            background: rgba(0, 212, 255, 0.05);
+            color: #00d4ff;
+        }
+
+        .workflow-tab:hover {
+            border-color: #00d4ff;
+        }
+
+        .workflow-viz {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .workflow-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .flow-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-text {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            margin: 0 0.5rem;
+        }
+
+        .play-btn {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .workflow-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        .metric-card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .metric-value {
+            font-size: 1.75rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .metric-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .workflow-tabs {
+                grid-template-columns: 1fr;
+            }
+            .workflow-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .flow-arrow {
+                display: none;
+            }
+        }
+
+        /* Case Studies */
+        .case-studies {
+            background: white;
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .case-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 2rem;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .case-card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .case-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .case-type {
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .case-desc {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-results {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .case-result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .case-result-label {
+            color: #666;
+        }
+
+        .case-result-value {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .case-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tool-badge {
+            background: white;
+            border: 1px solid #e0e0e0;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Integrations */
+        .integrations {
+            background: #f5f5f5;
+        }
+
+        .integration-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .integration-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s;
+        }
+
+        .integration-item:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.1);
+        }
+
+        .integration-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .integration-item p {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .integration-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-desc {
+            color: #b0c4ff;
+            max-width: 600px;
+            margin: 1rem auto 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid #00d4ff;
+            border-radius: 50%;
+            color: #00d4ff;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #00d4ff;
+            color: #0a0e27;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: #777;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav>
+        <div class="nav-content">
+            <h1>⚙️ Andrew Ayeni</h1>
+            <div>
+                <a href="#services">Services</a>
+                <a href="#workflows">Workflows</a>
+                <a href="#cases">Case Studies</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">AI Automation Engineer</div>
+            <h1>I build workflows that eliminate 40% of manual work</h1>
+            <p class="hero-subtitle">Specializing in n8n automation, business process optimization, and AI integration. Proven results: saved clients 1000s of hours, increased efficiency by 70%, ROI in 30 days.</p>
+            <div class="cta-group">
+                <a href="#services" class="btn btn-primary">View Services</a>
+                <a href="#contact" class="btn btn-secondary">Book Discovery Call</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">50+</div>
+                    <div class="stat-label">Workflows Built</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">15k+</div>
+                    <div class="stat-label">Hours Saved Clients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Automation Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Automation Services</h2>
+            <p class="section-subtitle">Production-ready workflows that eliminate manual work. Monthly recurring revenue model.</p>
+
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Client Onboarding Automation</h3>
+                    <div class="service-price">$500-800/mo</div>
+                    <p>Form submission → CRM record → welcome emails → folder setup</p>
+                    <ul class="service-features">
+                        <li>100% automated client intake</li>
+                        <li>4-6 hours/week saved</li>
+                        <li>Zero manual data entry</li>
+                        <li>All tools integrated</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-commerce Automation</h3>
+                    <div class="service-price">$700-1200/mo</div>
+                    <p>Shopify order → inventory sync → customer notifications → tracking</p>
+                    <ul class="service-features">
+                        <li>All orders auto-processed</li>
+                        <li>8-12 hours/week saved</li>
+                        <li>Real-time inventory sync</li>
+                        <li>Customer email automation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📧</div>
+                    <h3>Lead Generation Automation</h3>
+                    <div class="service-price">$800-1500/mo</div>
+                    <p>Form → qualification → email sequences → CRM pipeline management</p>
+                    <ul class="service-features">
+                        <li>Lead auto-scoring</li>
+                        <li>10-15 hours/week saved</li>
+                        <li>Follow-up sequences</li>
+                        <li>Pipeline tracking</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Integration & Reporting</h3>
+                    <div class="service-price">$650-1100/mo</div>
+                    <p>Multi-system sync + automated dashboards + daily/weekly reports</p>
+                    <ul class="service-features">
+                        <li>Real-time data sync</li>
+                        <li>5-8 hours/week saved</li>
+                        <li>Automated reports</li>
+                        <li>No manual updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKFLOWS -->
+    <section id="workflows" class="workflows">
+        <div class="container">
+            <h2>Featured Workflows</h2>
+            <p class="section-subtitle">Interactive automation systems built with n8n. Click to see each workflow in action.</p>
+
+            <!-- Tabs -->
+            <div class="workflow-tabs">
+                <div class="workflow-tab active" onclick="showWorkflow(0)">Onboarding</div>
+                <div class="workflow-tab" onclick="showWorkflow(1)">E-commerce</div>
+                <div class="workflow-tab" onclick="showWorkflow(2)">Content</div>
+            </div>
+
+            <!-- Visualization -->
+            <div class="workflow-viz">
+                <h3 id="workflow-name">Client Onboarding Automation</h3>
+
+                <div class="workflow-flow" id="workflow-flow">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div class="play-btn">
+                    <button class="btn btn-primary" onclick="playAnimation()">▶ Play Workflow</button>
+                </div>
+
+                <div class="workflow-metrics">
+                    <div class="metric-card">
+                        <div class="metric-value" id="metric-rate">100%</div>
+                        <div class="metric-label">Automation Rate</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="metric-hours">4-6</div>
+                        <div class="metric-label">Hours/Week Saved</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="metric-error">&lt;1%</div>
+                        <div class="metric-label">Error Rate</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="metric-roi">30 days</div>
+                        <div class="metric-label">Time to ROI</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="cases" class="case-studies">
+        <div class="container">
+            <h2>Client Case Studies</h2>
+            <p class="section-subtitle">Proven automation results. Real business impact. Measurable ROI.</p>
+
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>CelebWeave (SaaS)</h3>
+                        <span class="case-type">SaaS</span>
+                    </div>
+                    <p class="case-desc">Event planning platform automation. Eliminated manual client onboarding and project setup.</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-label">Hours Saved/Week</span>
+                            <span class="case-result-value">40+</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-label">Automation Rate</span>
+                            <span class="case-result-value">100%</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-label">Client Satisfaction</span>
+                            <span class="case-result-value">4.9/5</span>
+                        </div>
+                    </div>
+                    <div class="case-tools">
+                        <span class="tool-badge">n8n</span>
+                        <span class="tool-badge">WordPress</span>
+                        <span class="tool-badge">Airtable</span>
+                        <span class="tool-badge">Stripe</span>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>HitBay London (Shopify)</h3>
+                        <span class="case-type">E-commerce</span>
+                    </div>
+                    <p class="case-desc">Streetwear brand automation. Order processing, inventory sync, customer notifications fully automated.</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-label">Orders Automated</span>
+                            <span class="case-result-value">100%</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-label">Error Rate</span>
+                            <span class="case-result-value">&lt;0.5%</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-label">Time to ROI</span>
+                            <span class="case-result-value">14 days</span>
+                        </div>
+                    </div>
+                    <div class="case-tools">
+                        <span class="tool-badge">n8n</span>
+                        <span class="tool-badge">Shopify</span>
+                        <span class="tool-badge">Airtable</span>
+                        <span class="tool-badge">Gmail</span>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Nurtured Learning (E-learning)</h3>
+                        <span class="case-type">Course Platform</span>
+                    </div>
+                    <p class="case-desc">Course registration and payment automation. Lead capture to enrollment fully automated.</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-label">Leads Captured/Month</span>
+                            <span class="case-result-value">200+</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-label">Lead Conversion</span>
+                            <span class="case-result-value">34%</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-label">Setup Time</span>
+                            <span class="case-result-value">2 weeks</span>
+                        </div>
+                    </div>
+                    <div class="case-tools">
+                        <span class="tool-badge">n8n</span>
+                        <span class="tool-badge">WordPress</span>
+                        <span class="tool-badge">Stripe</span>
+                        <span class="tool-badge">Gmail</span>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-header">
+                        <h3>Agency Client (Operations)</h3>
+                        <span class="case-type">Agency</span>
+                    </div>
+                    <p class="case-desc">Multi-workflow automation. Onboarding, project tracking, reporting, client communication.</p>
+                    <div class="case-results">
+                        <div class="case-result-item">
+                            <span class="case-result-label">Hours/Week Saved</span>
+                            <span class="case-result-value">25+</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-label">Active Workflows</span>
+                            <span class="case-result-value">5+</span>
+                        </div>
+                        <div class="case-result-item">
+                            <span class="case-result-label">Team Productivity</span>
+                            <span class="case-result-value">+40%</span>
+                        </div>
+                    </div>
+                    <div class="case-tools">
+                        <span class="tool-badge">n8n</span>
+                        <span class="tool-badge">Slack</span>
+                        <span class="tool-badge">Airtable</span>
+                        <span class="tool-badge">Gmail</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEGRATIONS -->
+    <section class="integrations">
+        <div class="container">
+            <h2>Integration Ecosystem</h2>
+            <p class="section-subtitle">Build workflows connecting any tools. 1000+ integrations available through n8n.</p>
+
+            <div class="integration-grid">
+                <div class="integration-item">
+                    <div class="integration-icon">⚙️</div>
+                    <p>n8n</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">🌐</div>
+                    <p>WordPress</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">🛒</div>
+                    <p>Shopify</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">💳</div>
+                    <p>Stripe</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">📊</div>
+                    <p>Airtable</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">📧</div>
+                    <p>Gmail</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">💬</div>
+                    <p>Slack</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">🎯</div>
+                    <p>Zapier</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">🔗</div>
+                    <p>Make.com</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">🤖</div>
+                    <p>APIs</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">📈</div>
+                    <p>Google Sheets</p>
+                </div>
+                <div class="integration-item">
+                    <div class="integration-icon">🔔</div>
+                    <p>Discord</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ready to Eliminate Manual Work?</h2>
+            <p class="contact-desc">Let's build automations that save your team time and money. Book a free 30-minute discovery call.</p>
+
+            <div class="cta-group">
+                <a href="mailto:hello@bodrock.io" class="btn btn-primary">Email Me</a>
+                <a href="#" class="btn btn-secondary">Schedule Call</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com" title="GitHub">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://linkedin.com" title="LinkedIn">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.731-2.004 1.437-.103.25-.129.599-.129.948v5.42h-3.553s.047-8.789 0-9.717h3.553v1.378c.43-.664 1.199-1.608 2.918-1.608 2.134 0 3.732 1.388 3.732 4.368v5.579zM5.337 8.855c-1.144 0-1.915-.759-1.915-1.71 0-.951.77-1.71 1.915-1.71 1.144 0 1.915.759 1.915 1.71 0 .951-.771 1.71-1.915 1.71zm1.589 11.597H3.747V9.735h3.179v10.717zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com" title="Twitter">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </a>
+                <a href="mailto:hello@bodrock.io" title="Email">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        © 2024 Andrew Ayeni - AI Automation Engineer
+    </div>
+
+    <script>
+        const workflows = [
+            {
+                name: "Client Onboarding Automation",
+                steps: ["📝 Form Submit", "🔍 Extract Data", "💾 Create Record", "📧 Send Email", "📁 Create Folders", "✅ Complete"],
+                rate: "100%", hours: "4-6", error: "<1%", roi: "30 days"
+            },
+            {
+                name: "E-commerce Automation",
+                steps: ["🛒 New Order", "📊 Parse Data", "⚙️ Sync Inventory", "🔔 Notify", "📧 Email", "✅ Track"],
+                rate: "100%", hours: "8-12", error: "<0.5%", roi: "14 days"
+            },
+            {
+                name: "Content Publishing",
+                steps: ["📅 Schedule", "✏️ Format", "🌐 Publish", "📱 Social", "📬 Email", "✅ Track"],
+                rate: "100%", hours: "6-8", error: "<1%", roi: "21 days"
+            }
+        ];
+
+        let current = 0;
+
+        function showWorkflow(idx) {
+            current = idx;
+            document.querySelectorAll('.workflow-tab').forEach((t, i) => {
+                t.classList.toggle('active', i === idx);
+            });
+            renderWorkflow();
+        }
+
+        function renderWorkflow() {
+            const w = workflows[current];
+            document.getElementById('workflow-name').textContent = w.name;
+            
+            const flow = w.steps.map((s, i) => `
+                <div class="flow-step">
+                    <div class="step-icon" id="step-${i}">${s.split(' ')[0]}</div>
+                    <div class="step-text">${s.split(' ').slice(1).join(' ')}</div>
+                </div>
+                ${i < w.steps.length - 1 ? '<div class="flow-arrow">→</div>' : ''}
+            `).join('');
+            
+            document.getElementById('workflow-flow').innerHTML = flow;
+            document.getElementById('metric-rate').textContent = w.rate;
+            document.getElementById('metric-hours').textContent = w.hours;
+            document.getElementById('metric-error').textContent = w.error;
+            document.getElementById('metric-roi').textContent = w.roi;
+        }
+
+        function playAnimation() {
+            const steps = workflows[current].steps.length;
+            for (let i = 0; i < steps; i++) {
+                setTimeout(() => {
+                    const step = document.getElementById(`step-${i}`);
+                    if (step) {
+                        step.style.color = '#00d4ff';
+                        step.style.transform = 'scale(1.2)';
+                        setTimeout(() => {
+                            step.style.color = '';
+                            step.style.transform = '';
+                        }, 300);
+                    }
+                }, i * 300);
+            }
+        }
+
+        renderWorkflow();
+    </script>
+</body>
+</html>
